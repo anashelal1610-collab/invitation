@@ -43,10 +43,12 @@
 
 
         html,
-        body {
-            width: 100%;
-            min-height: 100%;
-        }
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #050505;
+    overscroll-behavior: none;
+}
 
 
         /* ========================================
@@ -55,52 +57,53 @@
 
         body {
 
-            min-height: 100vh;
+    min-height: 100vh;
 
-            display: flex;
+    display: flex;
 
-            justify-content: center;
+    justify-content: center;
 
-            align-items: center;
+    align-items: center;
 
-            font-family:
-                "Segoe UI",
-                Tahoma,
-                Arial,
-                sans-serif;
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
 
-            color: white;
+    color: white;
 
-            overflow-x: hidden;
+    overflow-x: hidden;
 
-            background:
+    overscroll-behavior: none;
 
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(179, 0, 0, 0.16),
-                    transparent 30%
-                ),
+    background:
 
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(179, 0, 0, 0.12),
-                    transparent 30%
-                ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(179, 0, 0, 0.16),
+            transparent 30%
+        ),
 
-                radial-gradient(
-                    circle at 50% 50%,
-                    rgba(255, 255, 255, 0.025),
-                    transparent 45%
-                ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(179, 0, 0, 0.12),
+            transparent 30%
+        ),
 
-                linear-gradient(
-                    135deg,
-                    #050505,
-                    #170d0d,
-                    #070707
-                );
-        }
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.025),
+            transparent 45%
+        ),
 
+        linear-gradient(
+            135deg,
+            #050505,
+            #170d0d,
+            #070707
+        );
+}
 
         /* ========================================
            BACKGROUND GLOW
