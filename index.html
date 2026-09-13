@@ -331,7 +331,6 @@
         /* ========================================
            CARD CONTAINER
            
-           IMPORTANT:
            IMAGE RATIO = 5:7
         ======================================== */
 
@@ -457,17 +456,6 @@
 
 
         /* ========================================
-           FLIP
-        ======================================== */
-
-        .card.flipped {
-
-            transform:
-                rotateY(180deg);
-        }
-
-
-        /* ========================================
            CARD FACES
         ======================================== */
 
@@ -527,10 +515,6 @@
 
         /* ========================================
            IMAGES
-           
-           IMPORTANT:
-           NO contain
-           NO dark background
         ======================================== */
 
         .card-face img {
@@ -1161,13 +1145,17 @@
            CARD FLIP
         ===================================== */
 
+        let rotation = 0;
+
         function flipCard() {
+
+            rotation += 180;
 
             const card =
                 document.getElementById("card");
 
-            card.classList.toggle("flipped");
-
+            card.style.transform =
+                "rotateY(" + rotation + "deg)";
         }
 
 
