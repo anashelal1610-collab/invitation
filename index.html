@@ -649,15 +649,38 @@
         }
 
 
+        /* ========================================
+           HIDE HINT AFTER FIRST CLICK
+        ======================================== */
+
         .hint.hidden {
 
-            opacity: 0;
+    animation:
+        hintDisappear .1s ease forwards !important;
 
-            transform:
-                translateY(10px);
+    pointer-events: none;
+}
 
-            pointer-events: none;
-        }
+
+@keyframes hintDisappear {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translateY(-12px);
+    }
+
+}
 
 
         .hint-icon {
@@ -1061,7 +1084,10 @@
              HINT
         ====================================== -->
 
-        <div class="hint" id="hint">
+        <div
+            class="hint"
+            id="hint"
+        >
 
             <div class="hint-icon">
                 ↑
@@ -1139,6 +1165,7 @@
 
             rotation += 180;
 
+
             const card =
                 document.getElementById("card");
 
@@ -1147,14 +1174,18 @@
                 "rotateY(" + rotation + "deg)";
 
 
-            /* Hide the hint after first click */
+            /* =================================
+               HIDE HINT AFTER FIRST CLICK
+            ================================= */
 
             if (firstClick) {
 
                 const hint =
                     document.getElementById("hint");
 
+
                 hint.classList.add("hidden");
+
 
                 firstClick = false;
 
