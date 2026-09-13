@@ -642,6 +642,21 @@
             animation-delay:
                 1.2s,
                 2.5s;
+
+            transition:
+                opacity .5s ease,
+                transform .5s ease;
+        }
+
+
+        .hint.hidden {
+
+            opacity: 0;
+
+            transform:
+                translateY(10px);
+
+            pointer-events: none;
         }
 
 
@@ -835,10 +850,6 @@
                 scale(.97);
         }
 
-
-        /* ========================================
-           FOOTER
-        ======================================== */
 
         /* ========================================
            MOBILE
@@ -1050,7 +1061,7 @@
              HINT
         ====================================== -->
 
-        <div class="hint">
+        <div class="hint" id="hint">
 
             <div class="hint-icon">
                 ↑
@@ -1112,13 +1123,6 @@
     </main>
 
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
-    
-
-
     <script>
 
 
@@ -1128,6 +1132,9 @@
 
         let rotation = 0;
 
+        let firstClick = true;
+
+
         function flipCard() {
 
             rotation += 180;
@@ -1135,8 +1142,24 @@
             const card =
                 document.getElementById("card");
 
+
             card.style.transform =
                 "rotateY(" + rotation + "deg)";
+
+
+            /* Hide the hint after first click */
+
+            if (firstClick) {
+
+                const hint =
+                    document.getElementById("hint");
+
+                hint.classList.add("hidden");
+
+                firstClick = false;
+
+            }
+
         }
 
 
