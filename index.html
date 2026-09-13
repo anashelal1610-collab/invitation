@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Abdelrahman & Arwa Engagement</title>
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* ========================================
+           RESET
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        /* ========================================
+           BODY
+        ======================================== */
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Arial,
+                sans-serif;
+
+            color: white;
+
+            overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(212, 175, 55, 0.16),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(212, 175, 55, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(255, 255, 255, 0.025),
+                    transparent 45%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #050505,
+                    #17130d,
+                    #070707
+                );
+        }
+
+
+        /* ========================================
+           BACKGROUND GLOW
+        ======================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(212, 175, 55, 0.08);
+
+            filter: blur(110px);
+
+            top: -220px;
+
+            left: -180px;
+
+            animation:
+                backgroundGlow1 9s
+                ease-in-out
+                infinite
+                alternate;
+
+            pointer-events: none;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+
+            height: 450px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            filter: blur(110px);
+
+            bottom: -200px;
+
+            right: -180px;
+
+            animation:
+                backgroundGlow2 11s
+                ease-in-out
+                infinite
+                alternate;
+
+            pointer-events: none;
+        }
+
+
+        @keyframes backgroundGlow1 {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(160px, 120px);
+            }
+
+        }
+
+
+        @keyframes backgroundGlow2 {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-130px, -100px);
+            }
+
+        }
+
+
+        /* ========================================
+           MAIN PAGE
+        ======================================== */
+
+        .page {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 22px;
+
+            padding: 25px 15px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* ========================================
+           TITLE
+        ======================================== */
+
+        .title {
+
+            text-align: center;
+
+            opacity: 0;
+
+            animation:
+                titleAppear 1.2s
+                ease
+                forwards;
+        }
+
+
+        .title-small {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            color: #d4af37;
+
+            margin-bottom: 10px;
+
+            text-transform: uppercase;
+        }
+
+
+        .title-main {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 34px;
+
+            font-weight: 500;
+
+            letter-spacing: 2px;
+
+            color: #ffffff;
+
+            line-height: 1.05;
+
+            text-shadow:
+                0 0 15px
+                rgba(212,175,55,.18);
+        }
+
+
+        .title-engagement {
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 43px;
+
+            font-weight: 400;
+
+            color: #d4af37;
+
+            line-height: .95;
+
+            margin-top: 3px;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+
+                0 0 8px
+                rgba(212,175,55,.35),
+
+                0 0 22px
+                rgba(212,175,55,.12);
+        }
+
+
+        @keyframes titleAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-25px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* ========================================
+           CARD CONTAINER
+           
+           IMPORTANT:
+           IMAGE RATIO = 5:7
+        ======================================== */
+
+        .card-container {
+
+            width:
+                min(
+                    82vw,
+                    calc(60vh * 5 / 7),
+                    420px
+                );
+
+            aspect-ratio: 5 / 7;
+
+            height: auto;
+
+            min-height: 0;
+
+            position: relative;
+
+            perspective: 1800px;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            animation:
+                cardAppear 1.4s
+                cubic-bezier(.2,.8,.2,1)
+                forwards;
+
+            animation-delay: .25s;
+        }
+
+
+        @keyframes cardAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(50px)
+                    scale(.94);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        /* ========================================
+           CARD SHADOW
+        ======================================== */
+
+        .card-container::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 85%;
+
+            height: 22px;
+
+            left: 7.5%;
+
+            bottom: -20px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 0, 0, .7);
+
+            filter: blur(18px);
+
+            transition:
+                .8s ease;
+
+            transform:
+                scaleX(.8);
+
+            pointer-events: none;
+        }
+
+
+        .card-container:hover::before {
+
+            transform:
+                scaleX(.95);
+        }
+
+
+        /* ========================================
+           THE CARD
+        ======================================== */
+
+        .card {
+
+            width: 100%;
+
+            height: 100%;
+
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            transition:
+                transform 1.45s
+                cubic-bezier(.22,.61,.36,1);
+
+            will-change: transform;
+
+            background: transparent;
+        }
+
+
+        /* ========================================
+           FLIP
+        ======================================== */
+
+        .card.flipped {
+
+            transform:
+                rotateY(180deg);
+        }
+
+
+        /* ========================================
+           CARD FACES
+        ======================================== */
+
+        .card-face {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background: transparent;
+
+            backface-visibility: hidden;
+
+            -webkit-backface-visibility: hidden;
+
+            box-shadow:
+
+                0 25px 65px
+                rgba(0, 0, 0, .6),
+
+                0 0 0 1px
+                rgba(212, 175, 55, .35);
+        }
+
+
+        /* ========================================
+           CARD BORDER
+        ======================================== */
+
+        .card-face::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 18px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.13);
+
+            pointer-events: none;
+
+            z-index: 10;
+        }
+
+
+        /* ========================================
+           IMAGES
+           
+           IMPORTANT:
+           NO contain
+           NO dark background
+        ======================================== */
+
+        .card-face img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: fill;
+
+            background: transparent;
+        }
+
+
+        /* ========================================
+           FRONT
+        ======================================== */
+
+        .front {
+
+            transform:
+                rotateY(0deg);
+        }
+
+
+        /* ========================================
+           BACK
+        ======================================== */
+
+        .back {
+
+            transform:
+                rotateY(180deg);
+        }
+
+
+        /* ========================================
+           SHINE
+        ======================================== */
+
+        .card-face::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: -120%;
+
+            left: -120%;
+
+            width: 55%;
+
+            height: 340%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.14),
+                    transparent
+                );
+
+            transform:
+                rotate(25deg);
+
+            animation:
+                shine 7s
+                ease-in-out
+                infinite;
+
+            pointer-events: none;
+
+            z-index: 5;
+        }
+
+
+        @keyframes shine {
+
+            0% {
+                left: -120%;
+            }
+
+            35% {
+                left: 180%;
+            }
+
+            100% {
+                left: 180%;
+            }
+
+        }
+
+
+        /* ========================================
+           HINT
+        ======================================== */
+
+        .hint {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color:
+                rgba(255,255,255,.72);
+
+            font-size: 13px;
+
+            opacity: 0;
+
+            animation:
+
+                hintAppear 1s ease forwards,
+
+                hintPulse 2.5s
+                ease-in-out infinite;
+
+            animation-delay:
+                1.2s,
+                2.5s;
+        }
+
+
+        .hint-icon {
+
+            font-size: 24px;
+
+            color: #d4af37;
+
+            line-height: 1;
+
+            animation:
+                fingerMove 1.8s
+                ease-in-out infinite;
+        }
+
+
+        @keyframes fingerMove {
+
+            0%,100% {
+
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-7px);
+            }
+
+        }
+
+
+        @keyframes hintAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        @keyframes hintPulse {
+
+            0%,100% {
+                opacity: .6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* ========================================
+           BUTTONS
+        ======================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            width:
+                min(92vw, 440px);
+
+            opacity: 0;
+
+            animation:
+                buttonsAppear 1s
+                ease
+                forwards;
+
+            animation-delay:
+                1.5s;
+        }
+
+
+        @keyframes buttonsAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        .button {
+
+            flex: 1;
+
+            min-height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            border-radius: 12px;
+
+            border:
+                1px solid
+                rgba(212,175,55,.45);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(212,175,55,.16),
+                    rgba(255,255,255,.04)
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+            transition:
+
+                transform .3s ease,
+
+                background .3s ease,
+
+                box-shadow .3s ease;
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(212,175,55,.28),
+                    rgba(255,255,255,.08)
+                );
+
+            box-shadow:
+
+                0 10px 30px
+                rgba(0,0,0,.3),
+
+                0 0 20px
+                rgba(212,175,55,.1);
+        }
+
+
+        .button:active {
+
+            transform:
+                scale(.97);
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        .footer {
+
+            position: fixed;
+
+            bottom: 10px;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255,255,255,.25);
+
+            z-index: 3;
+        }
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 600px) {
+
+            .page {
+
+                gap: 17px;
+
+                padding-top: 18px;
+
+                padding-bottom: 35px;
+            }
+
+
+            .title-small {
+
+                font-size: 10px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .title-main {
+
+                font-size: 28px;
+            }
+
+
+            .title-engagement {
+
+                font-size: 38px;
+            }
+
+
+            .card-container {
+
+                width:
+                    min(
+                        82vw,
+                        calc(58vh * 5 / 7)
+                    );
+
+                aspect-ratio: 5 / 7;
+
+                height: auto;
+
+                min-height: 0;
+            }
+
+
+            .buttons {
+
+                width: 92vw;
+            }
+
+
+            .button {
+
+                font-size: 12px;
+
+                min-height: 50px;
+            }
+
+        }
+
+
+        /* ========================================
+           SMALL PHONES
+        ======================================== */
+
+        @media (
+            max-height: 700px
+        ) and (
+            max-width: 600px
+        ) {
+
+            .page {
+
+                gap: 10px;
+            }
+
+
+            .title-main {
+
+                font-size: 24px;
+            }
+
+
+            .title-engagement {
+
+                font-size: 34px;
+            }
+
+
+            .card-container {
+
+                width:
+                    min(
+                        82vw,
+                        calc(52vh * 5 / 7)
+                    );
+
+                aspect-ratio: 5 / 7;
+
+                height: auto;
+
+                min-height: 0;
+            }
+
+
+            .hint {
+
+                font-size: 11px;
+            }
+
+
+            .button {
+
+                min-height: 48px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="page">
+
+
+        <!-- =====================================
+             TITLE
+        ====================================== -->
+
+        <div class="title">
+
+            <div class="title-small">
+                ENGAGEMENT INVITATION
+            </div>
+
+
+            <div class="title-main">
+                Abdelrahman & Arwa
+            </div>
+
+
+            <div class="title-engagement">
+                Engagement
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             INVITATION CARD
+        ====================================== -->
+
+        <div
+            class="card-container"
+            onclick="flipCard()"
+            role="button"
+            tabindex="0"
+            aria-label="Open invitation"
+        >
+
+            <div
+                class="card"
+                id="card"
+            >
+
+
+                <!-- FRONT -->
+
+                <div class="card-face front">
+
+                    <img
+                        src="./images/front.jpg.jpg"
+                        alt="Abdelrahman and Arwa Engagement"
+                    >
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <div class="card-face back">
+
+                    <img
+                        src="./images/back.jpg.jpg"
+                        alt="Engagement Details"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             HINT
+        ====================================== -->
+
+        <div class="hint">
+
+            <div class="hint-icon">
+                ↑
+            </div>
+
+            <div>
+                Tap the invitation to open
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             BUTTONS
+        ====================================== -->
+
+        <div class="buttons">
+
+
+            <!-- GOOGLE MAPS -->
+
+            <a
+                class="button"
+                href="https://maps.app.goo.gl/TVWhTQ2zcaSSxQWM6"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                📍
+
+                <span>
+                    Venue Location
+                </span>
+
+            </a>
+
+
+            <!-- GOOGLE CALENDAR -->
+
+            <a
+                class="button"
+                href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Abdelrahman%20%26%20Arwa%20Engagement&dates=20260919T200000/20260920T000000&details=Abdelrahman%20%26%20Arwa%20Engagement&location=Tulip%20Hall"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                📅
+
+                <span>
+                    Add to Calendar
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <div class="footer">
+        WITH LOVE ♡
+    </div>
+
+
+    <script>
+
+
+        /* =====================================
+           CARD FLIP
+        ===================================== */
+
+        function flipCard() {
+
+            const card =
+                document.getElementById("card");
+
+            card.classList.toggle("flipped");
+
+        }
+
+
+        /* =====================================
+           KEYBOARD SUPPORT
+        ===================================== */
+
+        const cardContainer =
+            document.querySelector(
+                ".card-container"
+            );
+
+
+        cardContainer.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    flipCard();
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
